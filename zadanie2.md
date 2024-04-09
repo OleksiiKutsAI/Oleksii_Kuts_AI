@@ -10,13 +10,30 @@ Zadanie 2
 - g)
 
 1.2
-- a)
-- b)
-- c)
-- d)
-- e)
-- f)
-- g)
+% siostra_rodzona(X, Y) - X jest rodzoną siostrą Y
+- siostra_rodzona(X, Y) :- rodzic(Z, X), rodzic(Z, Y), kobieta(X), X \= Y.
+- 
+% siostra_przyrodnia(X, Y) - X jest przyrodnia siostrą Y
+- siostra_przyrodnia(X, Y) :- rodzic(Z, X), rodzic(W, Y), kobieta(Z), kobieta(W), X \= Y, Z \= W.
+- 
+% przyrodni_kuzyn(X, Y) - X jest przyrodnim kuzynem Y
+- przyrodni_kuzyn(X, Y) :- rodzic(Z, X), rodzic(W, Y), siostra_przyrodnia(Z, W).
+- 
+% swat(X, Y) - X jest swatem Y
+- swat(X, Y) :- mezczyzna(X), kobieta(Y), rodzic(Z, Y), rodzenstwo(Z, X), \+ (ojciec(X, Z), matka(Y, Z)).
+- 
+% macocha(X, Y) - X jest macochą Y
+- macocha(X, Y) :- kobieta(X), rodzic(Z, Y), \+ rodzic(X, Y), \+ (matka(X, Z), ojciec(Y, Z)).
+- 
+% ojczym(X, Y) - X jest ojczymem Y
+- ojczym(X, Y) :- mezczyzna(X), rodzic(Z, Y), \+ rodzic(X, Y), \+ (ojciec(X, Z), matka(Y, Z)).
+- 
+- % przyrodni_brat(X, Y) - X jest przyrodnim bratem Y
+- przyrodni_brat(X, Y) :- mezczyzna(X), rodzic(Z, X), rodzic(W, Y), \+ rodzic(W, X), \+ rodzic(Z, Y), X \= Y.
+-
+% przyrodnia_siostra(X, Y) - X jest przyrodnia siostrą Y
+- przyrodnia_siostra(X, Y) :- kobieta(X), rodzic(Z, X), rodzic(W, Y), \+ rodzic(W, X), \+ rodzic(Z, Y), X \= Y.
+
 
 
 Zad2
