@@ -20,9 +20,9 @@ Zadanie 2
 
 
 Zad2
-- % kobieta(X) - X jest kobietą
+- 1)% kobieta(X) - X jest kobietą
 - kobieta(X) :- rodzic(X, _), \+ mezczyzna(X).
-- % ojciec(X, Y) - X jest ojcem Y
+- 2)% ojciec(X, Y) - X jest ojcem Y
 - ojciec(X, Y) :- rodzic(X, Y), mezczyzna(X).
 - 3)% matka(X, Y) - X jest matką Y
 - matka(X, Y) :- rodzic(X, Y), kobieta(X).
