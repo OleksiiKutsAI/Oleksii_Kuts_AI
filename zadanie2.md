@@ -20,9 +20,9 @@ Zadanie 2
 
 
 Zad2
-- 1) % kobieta(X) - X jest kobietą
+- % kobieta(X) - X jest kobietą
 - kobieta(X) :- rodzic(X, _), \+ mezczyzna(X).
-- 2) % ojciec(X, Y) - X jest ojcem Y
+- % ojciec(X, Y) - X jest ojcem Y
 - ojciec(X, Y) :- rodzic(X, Y), mezczyzna(X).
 - 3)% matka(X, Y) - X jest matką Y
 - matka(X, Y) :- rodzic(X, Y), kobieta(X).
@@ -36,7 +36,7 @@ Zad2
 - 6)% brat_przyrodni(X, Y) - X jest przyrodnim bratem Y
 - brat_przyrodni(X, Y) :- rodzic(Z, X), rodzic(W, Y), kobieta(Z), kobieta(W), X \= Y, Z \= W.
 
-- 7) % kuzyn(X, Y) - X jest kuzynem Y
+- 7)% kuzyn(X, Y) - X jest kuzynem Y
 - kuzyn(X, Y) :- rodzic(Z, X), rodzic(W, Y), brat_przyrodni(Z, W).
 
 - 8)% dziadek_od_strony_ojca(X, Y) - X jest dziadkiem od strony ojca dla Y
